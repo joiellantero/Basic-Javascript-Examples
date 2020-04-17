@@ -1,5 +1,4 @@
 # Simple Javascript Apps
----
 
 ## Six Parts
 
