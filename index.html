@@ -2,28 +2,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p id="someText"></p>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Javascript on Steroids</title>
+</head> 
+<body class="body">
 
-    <script>
-        let students = `[
-            {
-                "name": "Qazi",
-                "age": 25,
-                "height": 170
-            },
-            {
-                "name": "Rafeh",
-                "age": 28,
-                "height": 180
-            }
-        ]`
+    <!-- your age in days -->
+    <div class="container-1 shadow p-3 mb-5 bg-white rounded">
+        <h2>Your Age in Days</h2>
+        <div class="flex-box-container-1">
+            <div>
+                <button class="btn btn-primary" onClick="takeAgeInDays()">Click me</button>
+            </div>
 
-        console.log(JSON.parse(students)[1].name)
+            <div>
+                <button class="btn btn-danger" onClick="reset()">Reset</button>
+            </div>
+        </div>
+
+        <div>
+            <div id="flex-box-result"></div>
+        </div>
+    </div>
+
+    <!-- cat generator -->
+    <div class="container-2 shadow p-3 mb-5 bg-white rounded">
+        <h2>Cat Generator</h2>
+        <button class="btn btn-primary" id="cat-generator" onClick="generateCat()">Generate Cat</button>
+        <!-- <button class="btn btn-danger" id="cat-remover" onClick="removeCat()">Remove Cat</button> -->
+        <div class="flex-box-container-2" id="cat-flex-box"></div>
+    </div>
+
+    <!-- rock, paper, or scissors -->
+    <div class="container-3 shadow p-3 mb-5 bg-white rounded">
+        <h2>Rock, Paper, or Scissors</h2>
+        <div class="flex-box-container-3" id="flex-box-rps-div">
+            <img src="./images/paper" id="paper" alt="paper" height=150 width=150 onClick="rpsGame(this)">
+            <img src="./images/rock" id="rock" alt="rock" height=150 width=150 onClick="rpsGame(this)">
+            <img src="./images/scissors" id="scissors" alt="scissors" height=150 width=150 onClick="rpsGame(this)">
+        </div>
+    </div>
+
+    <script src="./js/script.js">
     </script>
-
-    <script src="./home.js"></script>
-</body> 
+    
+</body>
 </html>
