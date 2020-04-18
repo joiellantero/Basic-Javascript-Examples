@@ -33,55 +33,29 @@ function removeCat(){
 // rock, paper, scissors
 
 function decideWinner(humanChoice, botChoice){
-    if (
-            (!humanChoice.localeCompare('paper') && botChoice == 2) ||
-            (!humanChoice.localeCompare('rock') && botChoice == 3) ||
-            (!humanChoice.localeCompare('scissors') && botChoice == 1)
-        ){
+    var rpsDatabase = {
+        'rock': {'scissors': 1, 'rock': 0.5, 'paper': 0},
+        'paper': {'rock': 1, 'paper': 0.5, 'scissors': 0},
+        'scissors': {'paper':1, 'scissors':0.5, 'rock':0}
+    };
 
-        results = 1;
+    var humanScore = rpsDatabase[humanChoice][botChoice];
+    var botScore = rpsDatabase[botChoice][humanChoice];
+
+    return [humanScore, botScore];
+}
+
+function finalMessage([humanScore, botScore]){
+    if (humanScore == 1){
+        return {'message': 'You won!', 'color': '#5cb85c'};
     }
 
-    else if (
-                (!humanChoice.localeCompare('paper') && botChoice == 3) ||
-                (!humanChoice.localeCompare('rock') && botChoice == 1) ||
-                (!humanChoice.localeCompare('scissors') && botChoice == 2)
-            ){
-
-        results = -1;
-    }
-
-    else if (
-                (!humanChoice.localeCompare('paper') && botChoice == 1) ||
-                (!humanChoice.localeCompare('rock') && botChoice == 2) ||
-                (!humanChoice.localeCompare('scissors') && botChoice == 3)
-            ){
-
-        results = 0;
+    else if (humanScore == 0){
+        return {'message': 'You lost!', 'color': '#d9534f'};
     }
 
     else {
-        results = -2;
-    }
-
-    return results;
-}
-
-function finalMessage(results){
-    if (results == 1){
-        return {'message': 'You won!', 'color': 'green'};
-    }
-
-    else if (results == -1){
-        return {'message': 'You lost!', 'color': 'red'};
-    }
-
-    else if (results == 0){
-        return {'message': 'You tied!', 'color': 'yellow'};
-    }
-
-    else{
-        console.log('ERROR');
+        return {'message': 'You tied!', 'color': '#f0ad4e'};
     }
 }
 
@@ -93,8 +67,12 @@ function botRandChoice(choices) {
 function rpsGame(yourChoice){
     var humanChoice, botChoice;
     humanChoice = yourChoice.id;
-    var botChoice = [1, 2, 3]; // 1 = paper; 2 = rock; 3 = scissors
-    var results = decideWinner(humanChoice, botRandChoice(botChoice));
+    var choices = ['rock', 'paper', 'scissors']; // 1 = paper; 2 = rock; 3 = scissors
+    var botChoice = botRandChoice(choices);
+    console.log("human >> " + humanChoice);
+    console.log("bot >> " + botChoice);
+    var results = decideWinner(humanChoice, botChoice);
+    console.log(results);
     finalMessage(results);
     message = finalMessage(results);
     console.log(message);
@@ -102,6 +80,7 @@ function rpsGame(yourChoice){
 } 
 
 function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage){
+    console.log(botImageChoice);
     var imageDatabase = {
         'rock': document.getElementById('rock').src,
         'paper': document.getElementById('paper').src,
@@ -115,8 +94,20 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage){
     var humanDiv = document.createElement('div');
     var botDiv = document.createElement('div');
     var messageDiv = document.createElement('div');
+    var label1Div = document.createElement('div');
+    var label2Div = document.createElement('div');
 
-    humanDiv.innerHTML = "<img src='" + imageDatabase[humanImageChoice] + "'>"
+    humanDiv.innerHTML = "<img src='" + imageDatabase[humanImageChoice] + "' height=150 width=150 style='-webkit-filter: drop-shadow(5px 5px 5px #0275d8); filter: drop-shadow(5px 5px 5px #0275d8);'>"
+    messageDiv.innerHTML = "<h3 style='margin-top: 60px; -webkit-filter: drop-shadow(5px 5px 5px" + finalMessage.color + "); filter: drop-shadow(5px 5px 5px" + finalMessage.color + ");'>" + finalMessage.message + "</h3>"
+    botDiv.innerHTML = "<img src='" + imageDatabase[botImageChoice] + "' height=150 width=150 style='-webkit-filter: drop-shadow(5px 5px 5px #5bc0de); filter: drop-shadow(5px 5px 5px #5bc0de);'>"
+    label1Div.innerHTML = "<div class='ml'> HUMAN </div>"
+    label2Div.innerHTML = "<div class='mr'> BOT </div>"
+
+    document.getElementById('flex-box-rps-div').appendChild(humanDiv);
+    document.getElementById('flex-box-rps-div').appendChild(messageDiv);
+    document.getElementById('flex-box-rps-div').appendChild(botDiv);
+    document.getElementById('flex-box-rps-label').appendChild(label1Div);
+    document.getElementById('flex-box-rps-label').appendChild(label2Div);
 }
 
 
