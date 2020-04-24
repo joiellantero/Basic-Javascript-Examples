@@ -14,6 +14,10 @@ A basic app that takes an image online and generates images each time a button i
 
 A simple game of rock, paper, scissors which is a practice for logic and function calls. Exercises the logic of the programmer.
 
-### Part 4 - Change Button Colors.
+### Part 4 - Change Button Colors
 
 Simple trick in changing buttons by accessing the class lists and manipulating it. Also practices the loops and functions calls.
+
+### Part 5 - Blackjack
+
+A game that sums up Parts 1-4 and further exercises simple javascript programming.
