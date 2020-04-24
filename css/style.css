@@ -61,10 +61,92 @@
     transform: scale(1.1);
 }
 
+.flex-box-container-3 img:active{
+    /* box-shadow: 0px 10px 15px rgba(218, 114, 114, 0.5); */
+    -webkit-filter: drop-shadow(5px 5px 5px #ffffff);
+    filter:         drop-shadow(5px 5px 5px #ffffff); 
+    transform: scale(1.0);
+}
+
 .flex-box-container-3-label{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.table{
+    width: 30%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.flex-blackjack-row-1, .flex-blackjack-row-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: url('https://cdn.hipwallpaper.com/i/46/65/hEiUkp.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.flex-blackjack-row-1 div{
+    /* border: 1px solid black; */
+    padding: 10px;
+    flex: 1;
+    text-align: center;
+    height: 300px;
+    margin-top: 4%;
+}
+
+.flex-blackjack-row-1 img{
+    width: 25%;
+    padding: 10px;
+}
+
+.blackjack-buttons{
+    padding: 10px;
+}
+
+.generate-button:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px #00539b);
+    filter:         drop-shadow(5px 5px 5px #00539b); 
+    transform: scale(1.1);
+}
+
+.generate-button:active{
+    -webkit-filter: drop-shadow(5px 5px 5px #ffffff);
+    filter:         drop-shadow(5px 5px 5px #ffffff); 
+    transform: scale(1.0);
+}
+
+.hit-button:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px #00539b);
+    filter:         drop-shadow(5px 5px 5px #00539b); 
+    transform: scale(1.1);
+}
+
+.hit-button:active{
+    transform: scale(1.0);
+}
+
+.stand-button:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px #aa7a37);
+    filter:         drop-shadow(5px 5px 5px #aa7a37); 
+    transform: scale(1.1);
+}
+
+.stand-button:active{
+    transform: scale(1.0);
+}
+
+.deal-button:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px #8d3633);
+    filter:         drop-shadow(5px 5px 5px #8d3633); 
+    transform: scale(1.1);
+}
+
+.deal-button:active{
+    transform: scale(1.0);
 }
 
 

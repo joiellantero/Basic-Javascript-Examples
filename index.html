@@ -30,7 +30,7 @@
     <!-- cat generator -->
     <div class="container-2 shadow p-3 mb-5 bg-white rounded">
         <h2>Cat Generator</h2>
-        <button class="btn btn-primary" id="cat-generator" onClick="generateCat()">Generate Cat</button>
+        <button class="btn btn-primary generate-button" id="cat-generator" onClick="generateCat()">Generate Cat</button>
         <!-- <button class="btn btn-danger" id="cat-remover" onClick="removeCat()">Remove Cat</button> -->
         <div class="flex-box-container-2" id="cat-flex-box"></div>
     </div>
@@ -68,7 +68,42 @@
 
     <!-- blackjack  -->
     <div class="container-5 shadow p-3 mb-5 bg-white rounded">
-        <h2>BlackJack</h2>
+        <h2>BlackJack</h2><br>
+        <h5><span id="blackjack-result">Let's play</span></h5>
+
+        <div class="flex-blackjack-row-1">
+            <div id="your-box">
+                <h5>You: <span id="your-blackjack-result">0</span></h5>
+            </div>
+
+            <div id="dealer-box">
+                <h5>Dealer: <span id="dealer-blackjack-result">0</span></h5>
+            </div> 
+        </div>
+
+        <div class="flex-blackjack-row-2">
+            <div class="blackjack-buttons">
+                <button class="btn btn-primary mr-2 hit-button" id="blackjack-hit-button">Hit</button>
+                <button class="btn btn-warning mr-2 stand-button" id="blackjack-stand-button">Stand</button>
+                <button class="btn btn-danger deal-button" id="blackjack-deal-button">Deal</button>
+            </div>
+        </div>
+
+        <div class="flex-blackjack-row-3">
+            <table class="table">
+                <tr>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+
+                <tr>
+                    <td><span id="wins">0</span></td>
+                    <td><span id="losses">0</span></td>
+                    <td><span id="draws">0</span></td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <script src="./js/script.js">
