@@ -20,4 +20,4 @@ Simple trick in changing buttons by accessing the class lists and manipulating i
 
 ### Part 5 - Blackjack
 
-A game that sums up Parts 1-4 and further exercises simple javascript programming.
+A game that sums up Parts 1-4 and further exercises javascript programming and asynchronous functions.
