@@ -1,4 +1,4 @@
-# Simple Javascript Apps
+# Javascript Examples
 
 ## Five Parts
 
