@@ -1,6 +1,6 @@
 # Javascript Examples
 
-[Visit site](https://joiellantero.github.io/Javascript-Examples/)
+[View Live Preview](https://joiellantero.github.io/Javascript-Examples/)
 
 
 
