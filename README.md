@@ -1,4 +1,4 @@
-# Javascript Examples
+# Basic Javascript Examples
 
 [View Live Preview](https://joiellantero.github.io/Javascript-Examples/)
 
