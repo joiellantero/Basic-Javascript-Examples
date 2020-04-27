@@ -128,21 +128,21 @@ function buttonColorChange(buttonThingy){
 }
 
 function buttonRed() {
-    for(let i = 0; i < all_buttons.length; i++){
+    for(let i = 3; i < 7; i++){
         all_buttons[i].classList.remove(all_buttons[i].classList[1]);
         all_buttons[i].classList.add('btn-danger');
     }
 }
 
 function buttonGreen() {
-    for(let i = 0; i < all_buttons.length; i++){
+    for(let i = 3; i < 7; i++){
         all_buttons[i].classList.remove(all_buttons[i].classList[1]);
         all_buttons[i].classList.add('btn-success');
     }
 }
 
 function buttonColorReset() {
-    for(let i = 0; i < all_buttons.length; i++){
+    for(let i = 3; i < 7; i++){
         all_buttons[i].classList.remove(all_buttons[i].classList[1]);
         all_buttons[i].classList.add(copyAllButtons[i]);
     }
@@ -151,7 +151,7 @@ function buttonColorReset() {
 function randomColors(){
     var choices = ['btn-primary', 'btn-danger', 'btn-success', 'btn-warning']
 
-    for(let i = 0; i < all_buttons.length; i++){
+    for(let i = 3; i < 7; i++){
         all_buttons[i].classList.remove(all_buttons[i].classList[1]);
         all_buttons[i].classList.add(randColors(choices));
     }
@@ -184,6 +184,7 @@ let blackjackGame = {
     'draws': 0,
     'isStand': false,
     'turnsOver': false,
+    'hitOver': false,
 };
 
 const YOU = blackjackGame['you']
@@ -218,7 +219,7 @@ function showCard(activePlayer, card){
 }
 
 function blackjackDeal(){
-    if (blackjackGame['turnsOver'] === true){
+    if (blackjackGame['turnsOver'] === true && blackjackGame['hitOver'] === true){
         blackjackGame['isStand'] = false;
 
         dealSound.play();
@@ -244,6 +245,7 @@ function blackjackDeal(){
         document.querySelector('#blackjack-result').style.color = "black";
 
         blackjackGame['turnsOver'] = true;
+        blackjackGame['hitOver'] = false;
     }   
 }
 
@@ -284,6 +286,7 @@ function sleep(ms){
 
 async function dealerLogic(){
     blackjackGame['isStand'] = true;
+    blackjackGame['hitOver'] = true;
 
     while (DEALER['score'] <= 16 && blackjackGame['isStand'] === true){
         let card = randomCard();
