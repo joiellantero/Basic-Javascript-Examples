@@ -1,6 +1,6 @@
 # Javascript Examples
 
-[View Live Preview](https://joiellantero.github.io/Basic-Javascript-Examples/)
+[View Live Preview](https://javascript-examples.netlify.app/)
 
 
 
